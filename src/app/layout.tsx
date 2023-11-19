@@ -5,8 +5,8 @@ import '../styles/globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Genshin Damage Optimizer',
-  description: 'Damage Calculator',
+    title: 'Opera: Epicles',
+    description: 'Genshin Loadout Optimizer',
 }
 
 export default function RootLayout({
