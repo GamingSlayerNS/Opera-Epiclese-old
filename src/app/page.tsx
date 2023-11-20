@@ -1,23 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link';
 
-function damageCalc() {
-    const attackStat: number = 0;
-    const skill: number = 0;
-    const flatDmg: number = 0;
-    const elementalDmg: number = 0;
-    const bonusDmg: number = 0;
-    const characterLevel: number = 90;
-    const enemyLevel: number = 100;
-    const defenseDown: number = 0;
-    const enemyResist: number = 0;
+const { EnkaClient } = require("enka-network-api");
 
-    var damage = (attackStat * skill + flatDmg) * 
-                    (1 + elementalDmg + bonusDmg) * 
-                    ((characterLevel + 100) / 
-                    ((enemyLevel + 100) * (1 - defenseDown) + (characterLevel + 100))) * 
-                    (1 - enemyResist);
-}
+// Change the directory to store cache data.
+// Default directory is node_modules/enka-network-api/cache.
+const enka = new EnkaClient({ showFetchCacheLog: false, defaultLanguage: "en" });
+enka.cachedAssetsManager.cacheDirectoryPath = "./cache";
+enka.cachedAssetsManager.cacheDirectorySetup();
+// enka.cachedAssetsManager.fetchAllContents();
 
 export default function Home() {
     return (
@@ -38,7 +29,12 @@ export default function Home() {
             </div>
 
             <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-                <Link href="/hutao">calc here</Link>
+                <Link 
+                    href='/600169846'
+                >
+                    calc here
+                </Link>
+                {/* <Button /> */}
             </div>
         </main>
     )
