@@ -23,12 +23,23 @@ export default function User({ params }: any) {
         })
     }
 
-    const renderUser = (): any => {
+    const renderUserShowcase = (): any => {
         try {
             return enka.fetchUser(user).then((user: any) => {
                 // console.log(user.charactersPreview[0].costume._nameId);
-                return user.charactersPreview.map((c: any) => {
-                    return <p key={c.costume._nameId}>{c.costume._nameId}</p>
+                return user.characters.map((char: any) => {
+                    const name = char.characterData.name.get();
+                    const level = char.level;
+                    const maxLevel = char.maxLevel;
+                    const statsList = char.stats.statProperties.map((stats: any) => {
+                        return ` - ${stats.fightPropName.get()}: ${stats.valueText}`;
+                    });
+
+                    return <p key={char.characterData.name.get()}>
+                        {name} - Lv.{level}/{maxLevel}{statsList.map((c: any) => {
+                            return <><br key={c} />{c}</>
+                        })}
+                    </p>
                 })
             });
         } catch (error) {
@@ -47,8 +58,8 @@ export default function User({ params }: any) {
                 </div>
             </div>
 
-            <div className="mt-4 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-                {renderUser()}
+            <div className="mt-4 grid text-center lg:max-w-6xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left gap-y-8 gap-x-4">
+                {renderUserShowcase()}
             </div>
         </main>
     )
