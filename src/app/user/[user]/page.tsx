@@ -34,10 +34,17 @@ export default function User({ params }: any) {
                     const statsList = char.stats.statProperties.map((stats: any) => {
                         return ` - ${stats.fightPropName.get()}: ${stats.valueText}`;
                     });
+                    const artifacts = char.artifacts;
 
-                    return <p key={char.characterData.name.get()}>
-                        {name} - Lv.{level}/{maxLevel}{statsList.map((c: any) => {
-                            return <><br key={c} />{c}</>
+                    // return <p key={name}>
+                    //     {name} - Lv.{level}/{maxLevel}{statsList.map((c: any) => {
+                    //         return <><br key={c} />{c}</>
+                    //     })}
+                    // </p>
+
+                    return <p key={name}>
+                        {name} - Lv.{level}/{maxLevel}{artifacts.map((arti: any) => {
+                            return <><br key={arti.mainstat} />{arti.mainstat.getMultipliedValue()}</>
                         })}
                     </p>
                 })
