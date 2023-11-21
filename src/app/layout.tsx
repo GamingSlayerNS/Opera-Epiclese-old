@@ -5,7 +5,7 @@ import '../styles/globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-    title: 'Opera: Epicles',
+    title: 'Opera: Epiclese',
     description: 'Genshin Loadout Optimizer',
 }
 

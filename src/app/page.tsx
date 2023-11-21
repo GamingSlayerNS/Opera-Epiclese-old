@@ -8,7 +8,7 @@ const { EnkaClient } = require("enka-network-api");
 const enka = new EnkaClient({ showFetchCacheLog: false, defaultLanguage: "en" });
 enka.cachedAssetsManager.cacheDirectoryPath = "./cache";
 enka.cachedAssetsManager.cacheDirectorySetup();
-// enka.cachedAssetsManager.fetchAllContents();
+enka.cachedAssetsManager.fetchAllContents();
 
 export default function Home() {
     return (
@@ -30,7 +30,7 @@ export default function Home() {
 
             <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
                 <Link 
-                    href='/600169846'
+                    href='/user/600169846'
                 >
                     calc here
                 </Link>
