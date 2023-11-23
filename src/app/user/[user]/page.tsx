@@ -1,5 +1,6 @@
 import Furina from '@/components/furina'
 import { EnkaClient } from 'enka-network-api';
+import Link from 'next/link';
 
 // Change the directory to store cache data.
 // Default directory is node_modules/enka-network-api/cache.
@@ -64,6 +65,11 @@ export default function User({ params }: any) {
             </div>
 
             <div className="mt-4 grid text-center lg:max-w-6xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left gap-y-8 gap-x-4">
+                <Link 
+                    href='/'
+                >
+                    Home
+                </Link>
                 {/* {renderUserShowcase()} */}
             </div>
         </main>

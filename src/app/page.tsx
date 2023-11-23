@@ -31,7 +31,7 @@ export default function Home() {
                 <Link 
                     href='/user/600169846'
                 >
-                    calc here
+                    User
                 </Link>
                 {/* <Button /> */}
             </div>
