@@ -5,8 +5,7 @@ const { EnkaClient } = require("enka-network-api");
 
 // Change the directory to store cache data.
 // Default directory is node_modules/enka-network-api/cache.
-const enka = new EnkaClient({ showFetchCacheLog: false, defaultLanguage: "en" });
-enka.cachedAssetsManager.cacheDirectoryPath = "./cache";
+const enka = new EnkaClient({ cacheDirectory: "./cache", showFetchCacheLog: false, defaultLanguage: "en" });
 enka.cachedAssetsManager.cacheDirectorySetup();
 enka.cachedAssetsManager.fetchAllContents();
 

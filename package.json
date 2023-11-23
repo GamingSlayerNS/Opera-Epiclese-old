@@ -1,5 +1,5 @@
 {
-  "name": "genshin-damage-optimizer",
+  "name": "opera-epiclese",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "enka-network-api": "^4.1.2",
-    "next": "14.0.2",
+    "next": "^14.0.3",
+    "node": "^21.1.0",
     "react": "^18",
     "react-dom": "^18"
   },
